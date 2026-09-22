@@ -1,0 +1,15 @@
+{
+  "name": "norkunun",
+  "description": "Norkunun: audita y ayuda a corregir issues de Jira para que pasen la auditoría de calidad.",
+  "owner": {
+    "name": "Monteblack"
+  },
+  "plugins": [
+    {
+      "name": "norkunun",
+      "description": "Audita y ayuda a corregir issues de Jira para que pasen la auditoría de calidad.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
