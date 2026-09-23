@@ -23,7 +23,8 @@ Necesitas Claude Code y Python 3.8 o superior. No hay que instalar librerías.
    ```
    python3 ~/.claude/plugins/.../norkunun/scripts/norkunun.py login
    ```
-   Te pide la URL de Jira, tu usuario y tu password, y los guarda solo en tu equipo, en
+   Te pide la URL de Jira, tu usuario, tu password y los proyectos que se auditan (tu equipo
+   te da la lista; Norkunun solo trabaja con issues de esos proyectos), y los guarda solo en tu equipo, en
    `~/.config/norkunun/config.json`, legible solo por tu usuario. La password nunca pasa por el
    chat. La URL de Jira te la da tu equipo.
 
@@ -65,8 +66,8 @@ python3 scripts/norkunun.py check
 python3 scripts/norkunun.py issue PROY-123
 python3 scripts/norkunun.py mis-issues
 ```
-Las variables de entorno `NORKUNUN_URL`, `NORKUNUN_USER`, `NORKUNUN_PASS` y
-`NORKUNUN_VERIFY_SSL` tienen prioridad sobre el archivo de configuración.
+Las variables de entorno `NORKUNUN_URL`, `NORKUNUN_USER`, `NORKUNUN_PASS`,
+`NORKUNUN_PROJECTS` y `NORKUNUN_VERIFY_SSL` tienen prioridad sobre el archivo de configuración.
 
 ## Desarrollo
 

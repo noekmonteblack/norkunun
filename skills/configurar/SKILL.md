@@ -28,7 +28,8 @@ allowed-tools:
    - **Verificar certificado SSL**: `s`; si da error de certificado, repetir con `n`.
    - **Dominios internos**: el dominio del correo de su empresa, para distinguir clientes de
      colegas.
-   - **Proyectos**: las claves de los proyectos que quiere ver en `mis-issues` (Enter = todos).
+   - **Proyectos**: las claves de los proyectos que audita Norkunun, tal como se las pasó su
+     equipo. Norkunun solo muestra, audita y mejora issues de esos proyectos (Enter = todos).
 
    Todo queda guardado solo en su equipo, en `~/.config/norkunun/config.json` (legible solo por
    su usuario).

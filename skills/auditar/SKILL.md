@@ -61,3 +61,6 @@ solo si el usuario pregunta por diferencias.
 - `ssl`: sugiere repetir el login y responder `n` a verificar SSL.
 - `not_found`: la clave no existe o el usuario no tiene permiso para verla.
 - `network`: no hay conexión a Jira (¿VPN?).
+- `out_of_scope`: el issue es de un proyecto que Norkunun no audita (el mensaje lista los
+  proyectos configurados). Díselo tal cual; no intentes auditarlo igual. Si cree que el proyecto
+  debería estar, que lo agregue repitiendo el login en su terminal.

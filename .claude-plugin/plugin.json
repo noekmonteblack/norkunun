@@ -1,6 +1,6 @@
 {
   "name": "norkunun",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Apoyo para dejar los issues de Jira en condiciones de pasar la auditoría de calidad: audita, pregunta lo que falta y redacta descripción, cuadro ITIL, plan de trabajo y comentarios de avance.",
   "author": {
     "name": "Monteblack"

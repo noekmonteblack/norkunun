@@ -41,6 +41,12 @@ corrija sus issues antes del reporte diario.
   Cuadro ITIL y plan de trabajo van en comentarios propios. El SYSTEM_PROMPT del auditor
   central se cambió a la par (CRITERIA_VERSION 2).
 
+## Alcance por proyectos (v0.3.0, 2026-09-23)
+- `projects` del config (o `NORKUNUN_PROJECTS`) ya no solo filtra `mis-issues`: `issue` rechaza con
+  `out_of_scope` los issues de otros proyectos (se valida la clave antes de consultar y el
+  proyecto real después, por si el issue se movió). La lista real se entrega al equipo por fuera
+  del repo; en el repo nunca van claves reales.
+
 ## Pendiente
 - Que el auditor central importe `norkunun_rules.py`.
 - Probar la instalación del plugin desde GitHub en una máquina de usuario.

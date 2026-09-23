@@ -4,6 +4,8 @@ description: Redacta un issue de Jira nuevo, listo para pasar la auditoría, a p
 argument-hint: "[pega el correo o describe la solicitud]"
 allowed-tools:
   - Read
+  - Bash(python3 "${CLAUDE_PLUGIN_ROOT}/scripts/norkunun.py" check)
+  - Bash(python "${CLAUDE_PLUGIN_ROOT}/scripts/norkunun.py" check)
   - AskUserQuestion
 ---
 
@@ -29,7 +31,8 @@ Norkunun no crea issues en Jira: tú redactas y el usuario lo crea y pega el tex
    - **Tipo**: propón Incidente, Requerimiento o Tarea y explica en una frase por qué.
    - **ITIL**: preguntas concretas de impacto y urgencia, propuesta según la matriz y
      confirmación.
-   - **Proyecto** de Jira: pregunta en cuál se crea, si no es obvio.
+   - **Proyecto** de Jira: pregunta en cuál se crea, si no es obvio. Si el usuario configuró
+     proyectos (`norkunun.py check` los muestra en `proyectos`), propón solo esos.
    - **Plan de trabajo**: si el trabajo empieza pronto, ofrece dejarlo desde ya.
 5. **Entrega**:
    - Título (verbo + objeto + sistema/cliente), tipo y proyecto.

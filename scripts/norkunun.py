@@ -10,7 +10,7 @@ Uso:
   python3 norkunun.py mis-issues       # issues abiertos asignados a ti, con checks deterministas
 
 Credenciales: ~/.config/norkunun/config.json (permisos 600). También se pueden pasar por
-variables de entorno NORKUNUN_URL, NORKUNUN_USER y NORKUNUN_PASS, que tienen prioridad.
+variables de entorno NORKUNUN_URL, NORKUNUN_USER, NORKUNUN_PASS y NORKUNUN_PROJECTS, que tienen prioridad.
 Sin dependencias externas: solo biblioteca estándar de Python 3.8+.
 """
 
@@ -51,6 +51,8 @@ def load_config() -> dict:
     for key, env in (("url", "NORKUNUN_URL"), ("user", "NORKUNUN_USER"), ("password", "NORKUNUN_PASS")):
         if os.environ.get(env):
             cfg[key] = os.environ[env]
+    if os.environ.get("NORKUNUN_PROJECTS"):
+        cfg["projects"] = [p.strip().upper() for p in os.environ["NORKUNUN_PROJECTS"].split(",") if p.strip()]
     if os.environ.get("NORKUNUN_VERIFY_SSL"):
         cfg["verify_ssl"] = os.environ["NORKUNUN_VERIFY_SSL"].lower() in ("1", "true", "si", "yes")
     missing = [k for k in ("url", "user", "password") if not cfg.get(k)]
@@ -135,7 +137,7 @@ def cmd_login() -> dict:
     doms = ask("Dominios de correo internos de tu empresa, separados por coma (para distinguir clientes)",
                ",".join(old.get("internal_domains", [])))
     cfg["internal_domains"] = [d.strip().lower() for d in doms.split(",") if d.strip()]
-    projs = ask("Proyectos a revisar en mis-issues, separados por coma (Enter = todos)",
+    projs = ask("Claves de los proyectos que audita Norkunun, separadas por coma (Enter = todos)",
                 ",".join(old.get("projects", [])))
     cfg["projects"] = [p.strip().upper() for p in projs.split(",") if p.strip()]
 
@@ -190,9 +192,17 @@ def _summarize(issue: dict, cfg: dict, full: bool) -> dict:
     return out
 
 
+def _check_scope(cfg: dict, project: str) -> None:
+    if cfg["projects"] and project.upper() not in cfg["projects"]:
+        raise NorkununError("out_of_scope", "{} no está entre los proyectos que audita Norkunun ({}).".format(
+            project.upper(), ", ".join(cfg["projects"])))
+
+
 def cmd_issue(key: str) -> dict:
     cfg = load_config()
+    _check_scope(cfg, key.split("-")[0])
     issue = api_get(cfg, f"/rest/api/2/issue/{urllib.parse.quote(key.upper())}", {"fields": FIELDS})
+    _check_scope(cfg, issue["fields"]["project"]["key"])  # por si el issue se movió de proyecto
     return _summarize(issue, cfg, full=True)
 
 
