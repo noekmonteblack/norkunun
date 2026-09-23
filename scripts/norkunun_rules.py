@@ -39,7 +39,8 @@ DEFAULT_BOT_AUTHORS = {"Jira Admin"}
 _WROTE_RE = re.compile(r"^[ \t]*(?:\d{1,2}/\d{1,2}/\d{2,4}[^\n-]*-\s*)?(?P<name>[^\n]{3,80}?)\s+wrote:", re.M)
 _FROM_RE = re.compile(r"^[ \t*]*(?:De|From)\s*:\**\s*(?P<name>[^<\n]{3,80}?)\s*<(?P<email>[^>\n]+)>", re.M | re.I)
 _MAIL_HDR_RE = re.compile(r"^[ \t*]*(?:De|From|Enviado|Sent|Asunto|Subject)\s*:", re.M | re.I)
-_LABEL_RE = re.compile(r"^[ \t]*(?:solicitante|solicita|cliente|requirente)\s*:\s*(?P<v>.+)$", re.M | re.I)
+# Acepta la etiqueta en negrita de Jira: *Solicitante:* X, *Solicitante*: X
+_LABEL_RE = re.compile(r"^[ \t]*\*?(?:solicitante|solicita|cliente|requirente)\*?\s*:\s*\*?\s*(?P<v>[^\s*].*)$", re.M | re.I)
 _EMAIL_RE = re.compile(r"[\w.+-]+@(?P<d>[\w-]+(?:\.[\w-]+)+)")
 _TEAM_RE = re.compile(r"(oficina|subdirecci[oó]n|departamento|unidad|gerencia|[aá]rea|divisi[oó]n|equipo)", re.I)
 _TICKET_RE = re.compile(r"Ticket\s*#?\s*(\d{8,})", re.I)
@@ -110,7 +111,7 @@ def extract_deterministic(fields: dict, internal_domains: set[str] = frozenset()
     else:
         lm = _LABEL_RE.search(all_text)
         if lm:
-            nombre = lm.group("v").strip()[:80]
+            nombre = lm.group("v").strip().rstrip("*").strip()[:80]
 
     medios = []
     head = f"{summary}\n{desc}"

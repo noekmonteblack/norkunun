@@ -31,7 +31,8 @@ Se cumple con **una** de estas formas, dentro de la descripción o de un comenta
 - Una línea que **empiece** con `Solicitante:`, `Solicita:`, `Cliente:` o `Requirente:`,
   seguida del nombre.
 
-La forma recomendada al redactar es `Solicitante: Nombre Apellido`, al inicio de la línea.
+La forma recomendada al redactar es `Solicitante: Nombre Apellido`, al inicio de la línea. La
+etiqueta puede ir en negrita (`*Solicitante:* Nombre Apellido` o `*Solicitante*: ...`).
 
 ### Origen o medio (MED)
 Se revisa en el **título y la descripción**, no en los comentarios:
