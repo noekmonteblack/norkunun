@@ -4,10 +4,21 @@ description: Configura o verifica la conexión de Norkunun a Jira (URL, usuario 
 allowed-tools:
   - Bash(python3 "${CLAUDE_PLUGIN_ROOT}/scripts/norkunun.py" check)
   - Bash(python "${CLAUDE_PLUGIN_ROOT}/scripts/norkunun.py" check)
+  - Bash(python3 --version)
+  - Bash(python --version)
 ---
 
 # /norkunun:configurar
 
+0. Comprueba Python: `python3 --version`, y si no existe, `python --version`. Sirve 3.8 o
+   superior. Si no hay ninguno o es más antiguo, explica cómo instalarlo según su sistema y
+   espera a que confirme antes de seguir:
+   - **Windows**: `winget install Python.Python.3.12` en PowerShell, o el instalador de
+     python.org marcando *Add python.exe to PATH*. Luego cerrar y abrir la terminal y Claude Code.
+   - **macOS**: `brew install python`, o el instalador de python.org.
+   - **Linux**: el paquete `python3` de su distribución (ej: `sudo apt install python3`).
+   Usa en adelante el comando que funcionó (`python3` o `python`), también en el comando de
+   login que le des.
 1. Ejecuta `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/norkunun.py" check` (o `python` si
    `python3` no existe).
 2. Si responde `"ok": true`, muestra con qué usuario quedó conectado y los proyectos

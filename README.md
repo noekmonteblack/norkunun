@@ -8,7 +8,8 @@ Norkunun **solo lee** Jira. Nunca escribe: tú decides qué pegar.
 
 ## Instalación
 
-Necesitas Claude Code y Python 3.8 o superior. No hay que instalar librerías.
+Solo necesitas Claude Code. Norkunun usa Python 3.8 o superior (sin librerías extra); si no lo
+tienes, `/norkunun:configurar` te explica cómo instalarlo.
 
 1. En Claude Code:
    ```
