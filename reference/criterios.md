@@ -59,17 +59,23 @@ con texto: el usuario tiene que registrar horas en Jira.
 ## Checks de juicio: cómo evaluarlos
 
 ### Detalle (DET)
-Se entiende con claridad **qué** se solicita o qué falla. Alguien que no leyó el correo original
-tiene que poder entenderlo: sistema, ambiente y alcance; en un incidente, los síntomas y desde
-cuándo ocurre.
+Es **lo que expone el solicitante**: qué pide o qué falla, con sus palabras o citando su correo o
+mensaje. Alguien que no leyó el correo original tiene que poder entenderlo: sistema, ambiente y
+alcance; en un incidente, los síntomas y desde cuándo ocurre.
 
 ### Objetivo (OBJ)
-Se indica **para qué** se pide o **cuál es el resultado esperado**. Que el objetivo se pueda
-adivinar no alcanza: tiene que estar escrito.
+Es **lo que el ingeniero entendió que hay que hacer** para cumplir el detalle, y **el resultado
+esperado**: cómo se sabe que quedó listo. Copiar el pedido del solicitante no alcanza; tiene que
+verse la interpretación técnica. Lo que diga el correo citado **no cuenta**, aunque use la palabra
+"objetivo": tiene que ser texto propio del ingeniero, en la sección `h3. Objetivo`. Ejemplo: "Levantar un lab RHEL 9 con OpenJDK 17 y validar las
+cargas Sqoop/Spark/Hive actuales. Queda listo cuando las pruebas corren sin errores y se entrega
+el informe de compatibilidad."
 
 ### Cuadro ITIL (ITL)
 El texto menciona **explícitamente** el impacto y la urgencia. El tipo o la prioridad de Jira no
-cuentan. Formato recomendado:
+cuentan. Va en un **comentario propio** (no en la descripción); el auditor lee siempre los
+comentarios que mencionan impacto o urgencia, aunque sean antiguos. Si un issue antiguo lo tiene en
+la descripción, también cuenta. Formato recomendado:
 
 ```
 h3. Cuadro ITIL
@@ -122,12 +128,15 @@ cuentan**. Un buen comentario de avance dice qué se hizo, el resultado y la evi
 Para los checks de juicio, el auditor oficial no lee el issue completo:
 
 - **Descripción**: solo los primeros **2.500 caracteres**. Lo que venga después no existe para
-  la auditoría. Por eso Solicitante, Medio, Detalle, Objetivo, Cuadro ITIL y Plan van **arriba**, y
-  el correo original reenviado (firmas, CC, disclaimers) va **al final**.
-- **Comentarios**: solo los **últimos 8**, y de cada uno los primeros **300 caracteres**. Un
-  comentario de avance tiene que ser corto y decir el resultado en la primera frase. Varios
-  comentarios de espera ("en espera", "falta aprobación") seguidos pueden dejar fuera los de
-  avance anteriores.
+  la auditoría. Por eso Solicitante, Medio, Detalle y Objetivo van **arriba**, y el correo
+  original reenviado (firmas, CC, disclaimers) va **al final**.
+- **Comentario ITIL**: los comentarios que mencionan impacto o urgencia se leen **siempre** (los 2
+  más recientes, hasta 800 caracteres cada uno), estén donde estén.
+- **Resto de los comentarios**: solo los **últimos 8**, y de cada uno los primeros **300
+  caracteres**. Un comentario de avance tiene que ser corto y decir el resultado en la primera
+  frase. Varios comentarios de espera ("en espera", "falta aprobación") seguidos pueden dejar
+  fuera los de avance anteriores. El plan de trabajo no tiene este límite: el programa lo busca
+  en todos los comentarios.
 - **Adjuntos**: solo cuenta el **nombre** del archivo, para el plan o la evidencia de respaldo. El
   contenido no se lee. Si las pruebas o resultados están en un adjunto, hay que resumirlos en un
   comentario de avance que lo mencione por nombre.
@@ -135,7 +144,19 @@ Para los checks de juicio, el auditor oficial no lee el issue completo:
 ## Símbolos del reporte
 ✓ cumple · ✗ falta · ~ parcial · `·` aún no aplica · ? sin analizar · COH % = coherencia
 
-## Plantilla de descripción (formato wiki de Jira Server)
+## Dónde va cada cosa
+
+| Parte | Dónde | Quién la aporta |
+|---|---|---|
+| Solicitante, Medio | Descripción, arriba | Datos del pedido |
+| Detalle | Descripción | Lo que expone el solicitante |
+| Objetivo | Descripción | Lo que entendió el ingeniero y el resultado esperado |
+| Correo original | Descripción, al final | Cita del pedido |
+| Cuadro ITIL | Comentario propio | Ingeniero |
+| Plan de trabajo | Comentario propio (o adjunto) | Ingeniero |
+| Avances | Un comentario por avance | Ingeniero |
+
+### Plantilla de descripción (formato wiki de Jira Server)
 
 ```
 Solicitante: Nombre Apellido
@@ -143,18 +164,10 @@ Solicitante: Nombre Apellido
 Medio: Email (nombre.apellido@cliente.cl)
 
 h3. Detalle
-Qué se solicita o qué falla, sistema, ambiente y alcance.
+Lo que pide el solicitante: qué se solicita o qué falla, sistema, ambiente y alcance.
 
 h3. Objetivo
-Para qué se pide / resultado esperado.
-
-h3. Cuadro ITIL
-||Impacto||Urgencia||Prioridad||Justificación||
-|Medio|Alta|2 - Alta|...|
-
-h3. Plan de trabajo
-# Paso 1 — responsable — fecha
-# Paso 2 — ...
+Lo que se hará para cumplirlo y cómo se sabe que quedó listo.
 
 h3. Correo original
 {quote}
@@ -163,5 +176,20 @@ De: Nombre Apellido <nombre.apellido@cliente.cl>
 {quote}
 ```
 
-"Plan de trabajo" puede omitirse mientras el issue no esté en curso, pero conviene dejarlo desde
-el inicio.
+### Plantilla del comentario ITIL
+
+```
+h3. Cuadro ITIL
+||Impacto||Urgencia||Prioridad||Justificación||
+|Medio|Alta|2 - Alta|...|
+```
+
+### Plantilla del comentario de plan de trabajo
+
+```
+h3. Plan de trabajo
+# Paso 1 — responsable — fecha
+# Paso 2 — ...
+```
+
+El plan se exige cuando el issue pasa a En curso, pero conviene dejarlo desde el inicio.

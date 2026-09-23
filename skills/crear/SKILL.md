@@ -22,7 +22,8 @@ Norkunun no crea issues en Jira: tú redactas y el usuario lo crea y pega el tex
 2. **Material**: si `$ARGUMENTS` está vacío, pide que pegue el correo, el chat o una descripción
    de la solicitud.
 3. **Extrae** del material todo lo que puedas: solicitante (nombre, área, correo), medio,
-   número de ticket del cliente, qué se pide, para qué, plazos y a quién afecta.
+   número de ticket del cliente, qué se pide, plazos y a quién afecta. El objetivo (qué se hará
+   y cómo se sabe que quedó listo) lo define el usuario: propón uno y pide que lo valide.
 4. **Pregunta lo que falte**, de a 1 a 3 preguntas por turno, con el mismo orden y el mismo
    estilo que `/norkunun:mejorar` (solicitante → medio → detalle → objetivo → ITIL).
    - **Tipo**: propón Incidente, Requerimiento o Tarea y explica en una frase por qué.
@@ -32,7 +33,11 @@ Norkunun no crea issues en Jira: tú redactas y el usuario lo crea y pega el tex
    - **Plan de trabajo**: si el trabajo empieza pronto, ofrece dejarlo desde ya.
 5. **Entrega**:
    - Título (verbo + objeto + sistema/cliente), tipo y proyecto.
-   - Descripción completa en un bloque de código, con la plantilla de los criterios.
+   - Descripción completa en un bloque de código, con la plantilla de los criterios: Solicitante,
+     Medio, Detalle (lo que expone el solicitante) y Objetivo (lo que se hará y cómo se sabe que
+     quedó listo).
+   - Comentario ITIL en su propio bloque, para pegarlo como primer comentario del issue; y, si
+     el trabajo empieza pronto, el comentario de plan de trabajo.
    - Checklist proyectado: lo que queda ✓, y lo que aún no aplica (plan, desarrollo, horas)
      con la nota de que se exige cuando pase a En curso.
    - Pendientes: los `[COMPLETAR]` y los adjuntos sugeridos (por ejemplo, el correo original).

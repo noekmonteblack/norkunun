@@ -33,8 +33,13 @@ corrija sus issues antes del reporte diario.
 ## Acoplamiento con el auditor central
 - `criterios.md` (sección *Qué lee el auditor oficial*), `skills/mejorar` y
   `reference/prompt_issue_auditoria.md` citan los límites de `build_prompt` del auditor central:
-  descripción 2.500 caracteres, últimos 8 comentarios, 300 caracteres por comentario. Si cambian
-  allá, actualizarlos acá.
+  descripción 2.500 caracteres, últimos 8 comentarios, 300 caracteres por comentario, y los 2
+  comentarios más recientes que mencionan impacto/urgencia siempre incluidos (800 caracteres).
+  Si cambian allá, actualizarlos acá.
+- 2026-09-22: estructura acordada con el usuario. Descripción = Solicitante, Medio, Detalle (lo
+  que expone el solicitante) y Objetivo (lo que entendió el ingeniero + resultado esperado).
+  Cuadro ITIL y plan de trabajo van en comentarios propios. El SYSTEM_PROMPT del auditor
+  central se cambió a la par (CRITERIA_VERSION 2).
 
 ## Pendiente
 - Que el auditor central importe `norkunun_rules.py`.

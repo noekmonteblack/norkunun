@@ -38,9 +38,11 @@ cuando haya opciones claras, y texto libre para nombres y descripciones.
 2. **Medio**: ¿cómo llegó? Email, WhatsApp, Teams u otro. Si es email, pide la dirección (y el
    correo original, si lo tiene, para citarlo). Si fue por teléfono o presencial, explica que
    la auditoría no lo reconoce y sugiere pedir un correo de confirmación.
-3. **Detalle**: si es vago, pregunta qué sistema, qué ambiente y qué exactamente (en un
-   incidente: síntoma, desde cuándo, a quién afecta).
-4. **Objetivo**: "¿para qué lo necesitan?" o "¿cómo sabremos que quedó listo?".
+3. **Detalle** (lo que expone el solicitante): si es vago, pregunta qué sistema, qué ambiente y
+   qué exactamente (en un incidente: síntoma, desde cuándo, a quién afecta). Si hay correo
+   original, úsalo como base.
+4. **Objetivo** (lo que entendió el ingeniero): "¿qué vas a hacer para resolverlo?" y "¿cómo
+   sabremos que quedó listo?". Propón una redacción a partir del detalle y pide que la valide.
 5. **ITIL** (se omite si el título dice "respaldo"): haz las preguntas concretas de impacto y
    urgencia que están en los criterios, **propón** el nivel con la matriz y pide confirmación.
    Ejemplo: "Con lo que me cuentas propongo Impacto Medio, Urgencia Alta, que da prioridad
@@ -64,16 +66,20 @@ Cuando tengas los datos, entrega en este orden:
 
 1. **Cambios en campos de Jira** (si hay): título nuevo, tipo, estado.
 2. **Descripción completa** en un bloque de código, lista para pegar, con la plantilla de los
-   criterios. Conserva la información útil que ya tenía el issue; no la borres. Si había un
+   criterios: Solicitante, Medio, Detalle y Objetivo (sin ITIL ni plan). Conserva la información
+   útil que ya tenía el issue; no la borres. Si la descripción actual trae ITIL o plan, sácalos
+   de ahí y pásalos a sus comentarios. Si había un
    correo original, déjalo bajo `h3. Correo original` en `{quote}`, manteniendo la línea
    `De: Nombre <correo>`. El auditor solo lee los primeros 2.500 caracteres: si la descripción
    pasa de eso, avisa y deja todo lo exigido antes del correo.
-3. **Comentarios de avance sugeridos**: uno por bloque de código, con fecha, qué se hizo,
+3. **Comentario ITIL** y, si está en curso, **comentario de plan de trabajo**: cada uno en su
+   bloque de código, con las plantillas de los criterios.
+4. **Comentarios de avance sugeridos**: uno por bloque de código, con fecha, qué se hizo,
    resultado y evidencia. Cada uno de **menos de 300 caracteres**, con el resultado en la primera
    frase; si el avance está en adjuntos, resúmelo y nómbralos (ver *Qué lee el auditor oficial*
    en los criterios).
-4. **Checklist proyectado**: cómo quedaría cada check después de aplicar los cambios.
-5. **Pendientes del usuario en Jira**: imputar horas, adjuntar el plan o la evidencia, cambiar
+5. **Checklist proyectado**: cómo quedaría cada check después de aplicar los cambios.
+6. **Pendientes del usuario en Jira**: imputar horas, adjuntar el plan o la evidencia, cambiar
    el tipo o el estado, y completar los `[COMPLETAR]`.
 
 ### 4. Verificar

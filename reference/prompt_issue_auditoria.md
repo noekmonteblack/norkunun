@@ -37,15 +37,18 @@ contenido. Por eso algunos campos deben escribirse con estas palabras exactas:
    finales que la auditoría no lo va a reconocer.
    Si el material trae un número de ticket del cliente, inclúyelo como `Ticket#12345678`.
 
-3. DETALLE (lo revisa la IA). Explicar con claridad QUÉ se solicita o qué falla: sistema,
-   ambiente, alcance y pasos o síntomas en el caso de un incidente. Debe entenderlo alguien que
-   no leyó el correo original.
+3. DETALLE (lo revisa la IA, en la descripción). Es lo que EXPONE EL SOLICITANTE: qué pide o
+   qué falla, con sus palabras o citando su correo. Sistema, ambiente, alcance y, en un
+   incidente, síntomas y desde cuándo. Debe entenderlo alguien que no leyó el correo original.
 
-4. OBJETIVO (lo revisa la IA). Explicar PARA QUÉ se pide o cuál es el resultado esperado.
-   Sección propia con el título "Objetivo".
+4. OBJETIVO (lo revisa la IA, en la descripción). Es LO QUE EL INGENIERO ENTENDIÓ QUE HAY QUE
+   HACER para cumplir el detalle, y el resultado esperado (cómo se sabe que quedó listo). Copiar
+   el pedido no basta, y lo que diga el correo citado no cuenta aunque use la palabra
+   "objetivo". Sección propia con el título "Objetivo". Si el material no deja claro qué
+   se hará, propón una redacción y márcala como [VALIDAR].
 
-5. CUADRO ITIL (lo revisa la IA). Debe decir EXPLÍCITAMENTE el impacto y la urgencia. La
-   prioridad de Jira no cuenta. Usar esta tabla:
+5. CUADRO ITIL (lo revisa la IA). Va en un COMENTARIO propio, no en la descripción. Debe decir
+   EXPLÍCITAMENTE el impacto y la urgencia. La prioridad de Jira no cuenta. Usar esta tabla:
    ||Impacto||Urgencia||Justificación||
    |Alto / Medio / Bajo|Alta / Media / Baja|a quién afecta y por qué urge|
    Excepción: si el título contiene la palabra "respaldo", el cuadro ITIL no se exige.
@@ -65,8 +68,8 @@ Cuando el issue esté (o vaya a pasar a) "En curso", también se exige:
 7. PLAN DE TRABAJO (lo revisa el programa). El texto debe contener literalmente
    "Plan de trabajo" (o "PDT", "cronograma" o "carta gantt"), o bien un adjunto cuyo nombre
    contenga plan, trabajo, pdt, cronograma, gantt o carta.
-   Escribe una sección `h3. Plan de trabajo` con los pasos numerados y, si se conocen, los
-   responsables y las fechas.
+   Va en un COMENTARIO propio que empiece con `h3. Plan de trabajo`, con los pasos numerados y,
+   si se conocen, los responsables y las fechas.
    Caso respaldo: si el título contiene "respaldo", en vez de un plan sirve la evidencia del
    respaldo: un adjunto .tar, .tar.gz, .tgz o .gz, un adjunto cuyo nombre contenga bkp o backup,
    una captura de pantalla, o una tabla con columnas host o servidor y respaldo o backup.
@@ -100,32 +103,40 @@ h3. Detalle
 
 h3. Objetivo
 ...
-
-h3. Cuadro ITIL
-||Impacto||Urgencia||Justificación||
-|...|...|...|
-
-h3. Plan de trabajo
-# ...
-# ...
 ```
 (Si el material trae el correo original, agrégalo al final bajo `h3. Correo original`
 dentro de un bloque {quote}...{quote}, conservando la línea "De: Nombre <correo>". Va al final
 porque el auditor solo lee los primeros 2.500 caracteres de la descripción.)
 
-### 4. Comentarios de avance sugeridos
+### 4. Comentario ITIL (pegar como comentario)
+```
+h3. Cuadro ITIL
+||Impacto||Urgencia||Justificación||
+|...|...|...|
+```
+(Omitir si el título contiene "respaldo".)
+
+### 5. Comentario de plan de trabajo (pegar como comentario)
+```
+h3. Plan de trabajo
+# ...
+# ...
+```
+
+### 6. Comentarios de avance sugeridos
 Solo si el material menciona trabajo ya realizado. Un comentario por avance, con fecha, qué se
 hizo y el resultado. Cada comentario de menos de 300 caracteres, con el resultado en la primera
 frase: el auditor solo lee los primeros 300 caracteres de los últimos 8 comentarios, y no abre
 los adjuntos (si el avance está en un adjunto, resúmelo y nómbralo). Si no hay trabajo
 realizado, escribe "Sin avance que registrar".
+El comentario ITIL se lee siempre (hasta 800 caracteres), aunque sea antiguo.
 
-### 5. Checklist de auditoría
+### 7. Checklist de auditoría
 Para cada punto (Solicitante, Medio, Detalle, Objetivo, ITIL, Coherencia, Plan, Desarrollo,
 Horas) indica ✓ cumple, ✗ falta o — no aplica todavía (Plan, Desarrollo y Horas no aplican si el
 issue está en "Por hacer"), con una frase breve.
 
-### 6. Preguntas pendientes
+### 8. Preguntas pendientes
 Una lista de los datos que marcaste con [COMPLETAR] y de lo que el usuario debe hacer en Jira
 (cambiar el tipo, imputar horas, adjuntar el plan o la evidencia, actualizar el estado).
 
