@@ -51,7 +51,8 @@ contenido. Por eso algunos campos deben escribirse con estas palabras exactas:
    EXPLÍCITAMENTE el impacto y la urgencia. La prioridad de Jira no cuenta. Usar esta tabla:
    ||Impacto||Urgencia||Justificación||
    |Alto / Medio / Bajo|Alta / Media / Baja|a quién afecta y por qué urge|
-   Excepción: si el título contiene la palabra "respaldo", el cuadro ITIL no se exige.
+   Excepción: si el título contiene la palabra "respaldo", o si un comentario contiene [NOITIL]
+   (gestión recurrente, como reuniones de seguimiento), el cuadro ITIL no se exige.
 
 6. COHERENCIA (la revisa la IA):
    - El TÍTULO describe lo que realmente se pide: verbo + objeto + sistema/cliente, sin
@@ -114,7 +115,7 @@ h3. Cuadro ITIL
 ||Impacto||Urgencia||Justificación||
 |...|...|...|
 ```
-(Omitir si el título contiene "respaldo".)
+(Omitir si el título contiene "respaldo" o si el issue lleva [NOITIL].)
 
 ### 5. Comentario de plan de trabajo (pegar como comentario)
 ```

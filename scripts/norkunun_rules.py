@@ -52,6 +52,7 @@ _IMG_FILE_RE = re.compile(r"\.(png|jpe?g|gif|bmp|webp)$", re.I)
 _HOST_TABLE_RE = re.compile(r"(host|servidor)[^\n]{0,40}(respaldo|backup|bkp)|(respaldo|backup|bkp)[^\n]{0,40}\bhost\b", re.I)
 _FLAG_AUDIT = re.compile(r"\[AUDITAR\]", re.I)
 _FLAG_SKIP = re.compile(r"\[NOAUDITAR\]", re.I)
+_FLAG_NOITIL = re.compile(r"\[NOITIL\]", re.I)  # no exigir cuadro ITIL (ej: gestión recurrente)
 
 
 def _all_comments(fields: dict) -> list[dict]:
@@ -145,6 +146,7 @@ def extract_deterministic(fields: dict, internal_domains: set[str] = frozenset()
         "plan_files": sorted(set(plan_files)),
         "plan_text": plan_text,
         "is_respaldo": is_respaldo,
+        "no_itil": bool(_FLAG_NOITIL.search(all_text)),
         "backup_evidence": backup_evidence,
     }
 
@@ -155,7 +157,7 @@ def is_in_progress(fields: dict) -> bool:
 
 def required_checks(fields: dict, ext: dict) -> tuple[str, ...]:
     required = REQUIRED_IN_PROGRESS if is_in_progress(fields) else REQUIRED_TODO
-    if ext["is_respaldo"]:
+    if ext["is_respaldo"] or ext["no_itil"]:
         required = tuple(k for k in required if k != "itil")
     return required
 

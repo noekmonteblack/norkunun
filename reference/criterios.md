@@ -18,9 +18,12 @@ Hay dos tipos de checks:
 | Por hacer, Pendiente u otro no iniciado | solicitante, origen, detalle, objetivo, itil, coherencia |
 | En curso (`en_curso: true`) | los anteriores + plan, desarrollo, horas |
 | Título contiene "respaldo" | no se exige itil; el plan se cumple también con evidencia del respaldo |
+| Un comentario (o la descripción) contiene `[NOITIL]` | no se exige itil |
 
 Un comentario con `[NOAUDITAR]` excluye el issue de la auditoría y uno con `[AUDITAR]` fuerza una
-re-auditoría. Los pone una persona, no tú.
+re-auditoría. `[NOITIL]` deja de exigir el cuadro ITIL: sirve para issues de gestión recurrente
+(reuniones de seguimiento, bitácoras mensuales) que no tienen impacto ni urgencia que declarar.
+Los pone una persona, no tú; puedes sugerirlo, pero di que el uso queda a la vista de quien revisa.
 
 ## Checks deterministas: qué busca exactamente el código
 

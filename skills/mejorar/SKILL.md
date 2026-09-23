@@ -43,7 +43,9 @@ cuando haya opciones claras, y texto libre para nombres y descripciones.
    original, úsalo como base.
 4. **Objetivo** (lo que entendió el ingeniero): "¿qué vas a hacer para resolverlo?" y "¿cómo
    sabremos que quedó listo?". Propón una redacción a partir del detalle y pide que la valide.
-5. **ITIL** (se omite si el título dice "respaldo"): haz las preguntas concretas de impacto y
+5. **ITIL** (se omite si el título dice "respaldo" o si `extraido.no_itil` es true por un
+   `[NOITIL]`; si el issue es gestión recurrente, como reuniones de seguimiento, puedes ofrecer
+   `[NOITIL]` en vez del cuadro): haz las preguntas concretas de impacto y
    urgencia que están en los criterios, **propón** el nivel con la matriz y pide confirmación.
    Ejemplo: "Con lo que me cuentas propongo Impacto Medio, Urgencia Alta, que da prioridad
    2 - Alta. ¿Te parece?"
