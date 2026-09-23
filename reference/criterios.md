@@ -117,6 +117,21 @@ Se juzga **solo por los comentarios**:
 Los comentarios de horas, estimaciones o espera ("en espera", "revisando", "se estiman 4h") **no
 cuentan**. Un buen comentario de avance dice qué se hizo, el resultado y la evidencia.
 
+## Qué lee el auditor oficial (límites de texto)
+
+Para los checks de juicio, el auditor oficial no lee el issue completo:
+
+- **Descripción**: solo los primeros **2.500 caracteres**. Lo que venga después no existe para
+  la auditoría. Por eso Solicitante, Medio, Detalle, Objetivo, Cuadro ITIL y Plan van **arriba**, y
+  el correo original reenviado (firmas, CC, disclaimers) va **al final**.
+- **Comentarios**: solo los **últimos 8**, y de cada uno los primeros **300 caracteres**. Un
+  comentario de avance tiene que ser corto y decir el resultado en la primera frase. Varios
+  comentarios de espera ("en espera", "falta aprobación") seguidos pueden dejar fuera los de
+  avance anteriores.
+- **Adjuntos**: solo cuenta el **nombre** del archivo, para el plan o la evidencia de respaldo. El
+  contenido no se lee. Si las pruebas o resultados están en un adjunto, hay que resumirlos en un
+  comentario de avance que lo mencione por nombre.
+
 ## Símbolos del reporte
 ✓ cumple · ✗ falta · ~ parcial · `·` aún no aplica · ? sin analizar · COH % = coherencia
 

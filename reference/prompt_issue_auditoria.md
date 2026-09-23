@@ -110,11 +110,15 @@ h3. Plan de trabajo
 # ...
 ```
 (Si el material trae el correo original, agrégalo al final bajo `h3. Correo original`
-dentro de un bloque {quote}...{quote}, conservando la línea "De: Nombre <correo>".)
+dentro de un bloque {quote}...{quote}, conservando la línea "De: Nombre <correo>". Va al final
+porque el auditor solo lee los primeros 2.500 caracteres de la descripción.)
 
 ### 4. Comentarios de avance sugeridos
 Solo si el material menciona trabajo ya realizado. Un comentario por avance, con fecha, qué se
-hizo y el resultado. Si no hay trabajo realizado, escribe "Sin avance que registrar".
+hizo y el resultado. Cada comentario de menos de 300 caracteres, con el resultado en la primera
+frase: el auditor solo lee los primeros 300 caracteres de los últimos 8 comentarios, y no abre
+los adjuntos (si el avance está en un adjunto, resúmelo y nómbralo). Si no hay trabajo
+realizado, escribe "Sin avance que registrar".
 
 ### 5. Checklist de auditoría
 Para cada punto (Solicitante, Medio, Detalle, Objetivo, ITIL, Coherencia, Plan, Desarrollo,

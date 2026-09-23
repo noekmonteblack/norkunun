@@ -30,6 +30,12 @@ corrija sus issues antes del reporte diario.
   deterministas y los checks requeridos coinciden 1:1 con el auditor central en 7 issues,
   incluida la regla de respaldo.
 
+## Acoplamiento con el auditor central
+- `criterios.md` (sección *Qué lee el auditor oficial*), `skills/mejorar` y
+  `reference/prompt_issue_auditoria.md` citan los límites de `build_prompt` del auditor central:
+  descripción 2.500 caracteres, últimos 8 comentarios, 300 caracteres por comentario. Si cambian
+  allá, actualizarlos acá.
+
 ## Pendiente
 - Que el auditor central importe `norkunun_rules.py`.
 - Probar la instalación del plugin desde GitHub en una máquina de usuario.

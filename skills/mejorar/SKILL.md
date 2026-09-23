@@ -66,9 +66,12 @@ Cuando tengas los datos, entrega en este orden:
 2. **Descripción completa** en un bloque de código, lista para pegar, con la plantilla de los
    criterios. Conserva la información útil que ya tenía el issue; no la borres. Si había un
    correo original, déjalo bajo `h3. Correo original` en `{quote}`, manteniendo la línea
-   `De: Nombre <correo>`.
+   `De: Nombre <correo>`. El auditor solo lee los primeros 2.500 caracteres: si la descripción
+   pasa de eso, avisa y deja todo lo exigido antes del correo.
 3. **Comentarios de avance sugeridos**: uno por bloque de código, con fecha, qué se hizo,
-   resultado y evidencia.
+   resultado y evidencia. Cada uno de **menos de 300 caracteres**, con el resultado en la primera
+   frase; si el avance está en adjuntos, resúmelo y nómbralos (ver *Qué lee el auditor oficial*
+   en los criterios).
 4. **Checklist proyectado**: cómo quedaría cada check después de aplicar los cambios.
 5. **Pendientes del usuario en Jira**: imputar horas, adjuntar el plan o la evidencia, cambiar
    el tipo o el estado, y completar los `[COMPLETAR]`.
