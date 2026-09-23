@@ -6,7 +6,8 @@ corrija sus issues antes del reporte diario.
 
 ## Decisiones (2026-09-22)
 
-- **Plugin de Claude Code** en un repo GitHub privado. El repo es a la vez marketplace
+- **Plugin de Claude Code** en un repo GitHub público (desde 2026-09-23, para no exigir acceso
+  ni auth de git a cada usuario; por eso nada interno puede ir en el repo). El repo es a la vez marketplace
   (`.claude-plugin/marketplace.json`, con `source: "./"`) y plugin
   (`.claude-plugin/plugin.json`).
 - **Skills**: auditar, mejorar, crear, mis-issues y configurar. Lo interactivo lo hace Claude

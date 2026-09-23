@@ -16,8 +16,6 @@ tienes, `/norkunun:configurar` te explica cómo instalarlo.
    /plugin marketplace add noekmonteblack/norkunun
    /plugin install norkunun@norkunun
    ```
-   El repo es privado: tu cuenta de GitHub tiene que tener acceso, y git debe poder clonarlo
-   (con `gh auth login` o una clave SSH).
 
 2. Conéctalo a Jira **en tu propia terminal**, no dentro de Claude Code. Dentro de Claude,
    `/norkunun:configurar` te muestra el comando exacto con la ruta. Tiene esta forma:
