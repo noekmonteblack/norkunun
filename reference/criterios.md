@@ -192,8 +192,11 @@ h3. Cuadro ITIL
 
 ```
 h3. Plan de trabajo
-# Paso 1 — responsable — fecha
-# Paso 2 — ...
+# Paso 1 - responsable - fecha
+# Paso 2 - ...
 ```
 
 El plan se exige cuando el issue pasa a En curso, pero conviene dejarlo desde el inicio.
+
+En todo texto que se pega en Jira (título, descripción, comentarios) usa el guion simple `-` como
+separador, nunca la raya `—` ni `–`: Jira Server no las muestra bien.
