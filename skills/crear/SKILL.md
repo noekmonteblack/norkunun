@@ -35,7 +35,13 @@ Norkunun no crea issues en Jira: tú redactas y el usuario lo crea y pega el tex
      proyectos (`norkunun.py check` los muestra en `proyectos`), propón solo esos.
    - **Plan de trabajo**: si el trabajo empieza pronto, ofrece dejarlo desde ya.
 5. **Entrega**:
-   - Título (verbo + objeto + sistema/cliente), tipo y proyecto.
+   - Título (verbo + objeto + sistema/cliente), tipo y proyecto. Si el pedido llega por la
+     mesa de servicios de un tercero con número de ticket y/o de requerimiento, esos números van
+     al inicio del título, como en el asunto de su correo:
+     `Ticket <número> - Requerimiento <número> - <verbo + objeto + sistema>`. Copia el orden y el
+     separador del asunto si el usuario lo pega. Nunca dejes solo los números: la parte
+     descriptiva es la que evalúa el check de coherencia del título. Si falta algún número, va
+     como `[COMPLETAR]`.
    - Descripción completa en un bloque de código, con la plantilla de los criterios: Solicitante,
      Medio, Detalle (lo que expone el solicitante) y Objetivo (lo que se hará y cómo se sabe que
      quedó listo).
