@@ -62,7 +62,8 @@ contenido. Por eso algunos campos deben escribirse con estas palabras exactas:
      calza, recomienda cambiarlo.
    - El ESTADO es consistente con lo ocurrido. Si está "En curso", tiene que haber avance real;
      si ya se resolvió, no debe seguir abierto.
-   - Los comentarios de trabajo tratan del tema pedido, no de otra cosa.
+   - El plan de trabajo y los comentarios de avance tratan del tema pedido, no de otra cosa. El
+     cuadro ITIL no cuenta como trabajo.
 
 Cuando el issue esté (o vaya a pasar a) "En curso", también se exige:
 
@@ -77,7 +78,8 @@ Cuando el issue esté (o vaya a pasar a) "En curso", también se exige:
 
 8. DESARROLLO (lo revisa la IA en los COMENTARIOS, no en la descripción). Tiene que haber
    comentarios que muestren trabajo concreto hecho: qué se hizo, el resultado y la evidencia.
-   Los comentarios del tipo "se estima 4h", "en espera" o "revisando" NO cuentan.
+   Los comentarios del tipo "se estima 4h", "en espera" o "revisando" NO cuentan, ni el cuadro
+   ITIL. El plan de trabajo sí cuenta como avance.
    Para quedar "completo", el último comentario debe mostrar la entrega o el cierre.
 
 9. HORAS (lo revisa el programa). Tiene que haber horas registradas en el worklog del issue. Esto

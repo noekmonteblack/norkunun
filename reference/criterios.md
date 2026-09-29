@@ -113,10 +113,13 @@ menos el 75% de (ok + no).
 - **Tipo**: corresponde a lo descrito. Una falla o algo que dejó de funcionar es un
   **Incidente**; algo nuevo o un cambio pedido es un **Requerimiento**; el trabajo interno o
   recurrente es una **Tarea**.
-- **Trabajo**: los comentarios de avance tratan del tema pedido, sin derivar a otro (`na` si no
-  hay comentarios de trabajo).
+- **Trabajo**: el plan de trabajo y los comentarios de avance tratan del tema pedido, sin derivar a
+  otro. Juzga solo el tema, no si el trabajo terminó (eso es Desarrollo): un plan coherente con lo
+  pedido cumple. El cuadro ITIL no cuenta como trabajo (`na` si no hay plan ni avances).
 - **Estado**: consistente con lo ocurrido. Por ejemplo, "En curso" pero detenido, o ya resuelto
-  pero sigue abierto, es `no` (`na` si no hay actividad).
+  pero sigue abierto, es `no` (`na` si no hay actividad; el cuadro ITIL no es actividad).
+- En un issue recién creado solo se pueden juzgar el título y el tipo (y el trabajo si ya tiene
+  plan): con uno de ellos en `no`, la coherencia queda bajo el 75% y falla.
 
 ### Desarrollo (DES), solo en curso
 Se juzga **solo por los comentarios**:
@@ -125,7 +128,7 @@ Se juzga **solo por los comentarios**:
 - **ninguno (✗)**: no hay evidencia de trabajo.
 
 Los comentarios de horas, estimaciones o espera ("en espera", "revisando", "se estiman 4h") **no
-cuentan**. Un buen comentario de avance dice qué se hizo, el resultado y la evidencia.
+cuentan**, y tampoco el cuadro ITIL. El plan de trabajo **sí** cuenta como avance del ingeniero. Un buen comentario de avance dice qué se hizo, el resultado y la evidencia.
 
 ## Qué lee el auditor oficial (límites de texto)
 
