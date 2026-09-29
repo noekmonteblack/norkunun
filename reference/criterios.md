@@ -34,8 +34,8 @@ Se cumple con **una** de estas formas, dentro de la descripción o de un comenta
 - Una línea que **empiece** con `Solicitante:`, `Solicita:`, `Cliente:` o `Requirente:`,
   seguida del nombre.
 
-La forma recomendada al redactar es `Solicitante: Nombre Apellido`, al inicio de la línea. La
-etiqueta puede ir en negrita (`*Solicitante:* Nombre Apellido` o `*Solicitante*: ...`).
+La forma recomendada al redactar es `*Solicitante:* Nombre Apellido`, al inicio de la línea: la
+etiqueta en negrita ayuda al lector y el programa la reconoce igual (también sin negrita).
 
 ### Origen o medio (MED)
 Se revisa en el **título y la descripción**, no en los comentarios:
@@ -166,9 +166,9 @@ Para los checks de juicio, el auditor oficial no lee el issue completo:
 ### Plantilla de descripción (formato wiki de Jira Server)
 
 ```
-Solicitante: Nombre Apellido
-Área: Gerencia / Unidad
-Medio: Email (nombre.apellido@cliente.cl)
+*Solicitante:* Nombre Apellido
+*Area:* Gerencia / Unidad
+*Medio:* Email (nombre.apellido@cliente.cl)
 
 h3. Detalle
 Lo que pide el solicitante: qué se solicita o qué falla, sistema, ambiente y alcance.
@@ -202,4 +202,5 @@ h3. Plan de trabajo
 El plan se exige cuando el issue pasa a En curso, pero conviene dejarlo desde el inicio.
 
 En todo texto que se pega en Jira (título, descripción, comentarios) usa el guion simple `-` como
-separador, nunca la raya `—` ni `–`: Jira Server no las muestra bien.
+separador, nunca la raya `—` ni `–`: Jira Server no las muestra bien. Evita también la "Á"
+mayúscula (escribe "Area", no "Área"): algunos Jira Server la guardan como "?".

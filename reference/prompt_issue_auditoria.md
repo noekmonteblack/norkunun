@@ -23,13 +23,13 @@ Una parte la revisa un programa que busca patrones de texto y otra la revisa una
 contenido. Por eso algunos campos deben escribirse con estas palabras exactas:
 
 1. SOLICITANTE (lo revisa el programa). La descripción debe tener una línea que empiece así:
-   `Solicitante: Nombre Apellido`
+   `*Solicitante:* Nombre Apellido` (la negrita es opcional, pero se recomienda)
    También sirve una línea de encabezado de correo: `De: Nombre Apellido <correo@dominio>`.
    Si hay correo del solicitante, inclúyelo. Si pertenece a un área o equipo, agrega una línea
    `Área: ...`.
 
 2. MEDIO u ORIGEN (lo revisa el programa). Solo se reconocen estos tres medios:
-   - Email: la descripción debe contener una dirección de correo real (ej. `Medio: Email (juan.perez@cliente.cl)`).
+   - Email: la descripción debe contener una dirección de correo real (ej. `*Medio:* Email (juan.perez@cliente.cl)`).
      Escribir solo "correo" sin la dirección NO basta.
    - WhatsApp: escribir literalmente `Medio: WhatsApp`.
    - Teams: escribir literalmente `Medio: Teams`.
@@ -97,9 +97,9 @@ Devuelve exactamente estas secciones:
 
 ### 3. Descripción (listo para pegar en Jira, formato wiki)
 ```
-Solicitante: ...
-Área: ...
-Medio: ...
+*Solicitante:* ...
+*Area:* ...
+*Medio:* ...
 
 h3. Detalle
 ...
