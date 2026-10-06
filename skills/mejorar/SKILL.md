@@ -84,6 +84,11 @@ Cuando tengas los datos, entrega en este orden:
 6. **Pendientes del usuario en Jira**: imputar horas, adjuntar el plan o la evidencia, cambiar
    el tipo o el estado, y completar los `[COMPLETAR]`.
 
+### Si el issue se va a cerrar
+Si el trabajo terminó o el usuario lo va a resolver, entrega además el **resumen de resolución**
+(panel al final de la descripción) con la plantilla de los criterios, armado con los
+comentarios, adjuntos y correos del issue. Va siempre antes de pasarlo a Resuelto.
+
 ### 4. Verificar
 Ofrece: "Cuando lo pegues en Jira, dime y lo vuelvo a auditar". Si acepta, vuelve a traer el
 issue con el script y muestra el checklist actualizado.

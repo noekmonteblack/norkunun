@@ -162,6 +162,7 @@ Para los checks de juicio, el auditor oficial no lee el issue completo:
 | Cuadro ITIL | Comentario propio | Ingeniero |
 | Plan de trabajo | Comentario propio (o adjunto) | Ingeniero |
 | Avances | Un comentario por avance | Ingeniero |
+| Resumen de resolución | Descripción, al final (al cerrar) | Ingeniero |
 
 ### Plantilla de descripción (formato wiki de Jira Server)
 
@@ -204,3 +205,42 @@ El plan se exige cuando el issue pasa a En curso, pero conviene dejarlo desde el
 En todo texto que se pega en Jira (título, descripción, comentarios) usa el guion simple `-` como
 separador, nunca la raya `—` ni `–`: Jira Server no las muestra bien. Evita también la "Á"
 mayúscula (escribe "Area", no "Área"): algunos Jira Server la guardan como "?".
+
+## Resumen de resolución (al cerrar el issue)
+
+Es **obligatorio en todo issue que se resuelve**: antes de pasarlo a Resuelto se agrega al
+**final de la descripción**, después del correo original, un panel con el resumen de lo que pasó y
+cómo se resolvió. Es lo primero que lee alguien que llega al issue cerrado. El auditor no lo
+evalúa (no audita issues resueltos y va después de los 2.500 caracteres), pero es el estándar
+de cierre.
+
+Reglas:
+- Va **siempre** con el mismo formato de panel: borde y título verdes, fondo verde claro.
+- **Sin íconos ni emoticones** (`(/)`, `(!)`, `(i)`, etc.), ni en el título ni en los bloques.
+- Bloques en negrita, con fecha cuando corresponde. En un **Incidente** el primero es `Causa`;
+  en un **Requerimiento** o una **Tarea** es `Contexto` (qué se pidió y con quién se hizo).
+- `Seguimiento` solo si hubo observación posterior o quedan recomendaciones; si no, se omite.
+- Viñetas para separar nodos, sistemas o pasos. Solo hechos que estén en el issue, los
+  comentarios, los correos o lo que diga el usuario.
+- Sin `Á` y con guion simple `-`, igual que el resto del texto para Jira.
+
+### Plantilla del resumen de resolución
+
+```
+{panel:title=Resumen de resolucion|borderStyle=solid|borderColor=#36B37E|titleBGColor=#E3FCEF|bgColor=#F7FFFA}
+*Causa*
+Qué falló, desde cuándo y por qué. Qué se descartó.
+* *componente-1:* efecto observado.
+
+*Solucion - DD/MM*
+* *componente-1:* qué se hizo.
+* Validaciones realizadas y su resultado.
+
+*Seguimiento - DD/MM*
+Qué se observó después y recomendaciones pendientes para el cliente.
+
+*Cierre - DD/MM*
+Quién dio conformidad y por qué medio (correo adjunto, comentario, portal).
+{panel}
+```
+
